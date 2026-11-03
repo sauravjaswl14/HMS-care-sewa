@@ -1,0 +1,62 @@
+@import '@fontsource-variable/bricolage-grotesque/wdth.css';
+@import '@fontsource-variable/public-sans/index.css';
+@import '@fontsource/jetbrains-mono/400.css';
+@import '@fontsource/jetbrains-mono/500.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+@layer base {
+  html {
+    background: #edf2f4;
+    color: #0f2a33;
+  }
+  body {
+    @apply bg-box font-sans text-[1.0625rem] leading-relaxed text-ink antialiased;
+    overflow-x: clip;
+  }
+  :focus-visible {
+    outline: 3px solid #1f7a6b;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  ::selection {
+    background: #f5d547;
+    color: #0f2a33;
+  }
+}
+
+@layer components {
+  .display {
+    @apply font-display font-extrabold leading-[0.95] tracking-[-0.025em];
+    font-stretch: 78%;
+  }
+  .display-md {
+    @apply font-display font-bold leading-[1] tracking-[-0.02em];
+    font-stretch: 86%;
+  }
+  .vitals {
+    @apply font-vitals tabular-nums;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center rounded-full px-6 py-3.5 text-base font-semibold transition-colors duration-200;
+  }
+  .btn-ink {
+    @apply bg-ink text-paper hover:bg-scrub;
+  }
+  .btn-line {
+    @apply border-2 border-ink text-ink hover:bg-ink hover:text-paper;
+  }
+}
